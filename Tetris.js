@@ -647,9 +647,12 @@ function loop(){
             for(let j = 24; j < 56; j++){
                 setTimeout(coursechange,3500+100*j,j);
             }
-            for(let i = 24; i < 56; i++){
+            for(let i = 24; i < 53; i++){
                 setTimeout(coursechange,6700+100*i,i);
             }
+            setTimeout(coursechange,12000,79);
+            setTimeout(coursechange,12100,78);
+            setTimeout(coursechange,12200,77);
             for(let i = 56; i < 77; i++){
                 setTimeout(coursechange,6700+100*i,i);
             }
@@ -1288,6 +1291,24 @@ function imove(){
         drawblock(31);
     }else if(course == 55){
         drawblock(0);
+    }else if(course == 77){
+        blocki(4,561,565);
+        blocki(8,727,565);
+        blocki(12,893,565);
+        blocki(16,1059,565);
+        blocki(20,1225,565);
+    }else if(course == 78){
+        blocki(4,603,565);
+        blocki(8,769,565);
+        blocki(12,935,565);
+        blocki(16,1101,565);
+        blocki(20,1267,565);
+    }else if(course == 79){
+        blocki(4,644,565);
+        blocki(8,810,565);
+        blocki(12,976,565);
+        blocki(16,1142,565);
+        blocki(20,1308,565);
     }else if(course == 56){
         blocki(4,520,565);
         blocki(8,686,565);
