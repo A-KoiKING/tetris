@@ -1,6 +1,6 @@
 //Tetris bgm 引用 https://youtu.be/K3hr3kONhjw
-//undertale bgm 引用 
-//効果音 引用 
+//undertale bgm 引用 https://www.youtube.com/watch?v=94JDIBZhSBM
+//効果音 引用 https://soundeffect-lab.info/
 
 //-------フレーム処理
 FPS = 20;
@@ -640,25 +640,28 @@ function loop(){
             soulx = 944;
             souly = 684;
             drawImg(236,soulx,souly);
-            condition = 21;
-            for(let i = 1; i < 56; i++){
-                setTimeout(coursechange,300+100*i,i);
-            }
-            for(let j = 24; j < 56; j++){
-                setTimeout(coursechange,3500+100*j,j);
-            }
-            for(let i = 24; i < 53; i++){
-                setTimeout(coursechange,6700+100*i,i);
-            }
-            setTimeout(coursechange,12000,79);
-            setTimeout(coursechange,12100,78);
-            setTimeout(coursechange,12200,77);
-            for(let i = 56; i < 77; i++){
-                setTimeout(coursechange,6700+100*i,i);
-            }
-            setTimeout(changecondition,15300,0);
+            if(stage == 0){
+                condition = 21;
+                for(let i = 1; i < 56; i++){
+                    setTimeout(coursechange,300+100*i,i);
+                }
+                for(let j = 24; j < 56; j++){
+                    setTimeout(coursechange,3500+100*j,j);
+                }
+                for(let i = 24; i < 53; i++){
+                    setTimeout(coursechange,6700+100*i,i);
+                }
+                setTimeout(coursechange,12000,79);
+                setTimeout(coursechange,12100,78);
+                setTimeout(coursechange,12200,77);
+                for(let i = 56; i < 77; i++){
+                    setTimeout(coursechange,6700+100*i,i);
+                }
+                setTimeout(changecondition,15300,0);
+                setTimeout(changestage,15300,1);
+            }else if(stage == 1){
 
-
+            }
         }
         if(condition == 21){
             if(stage == 0){
@@ -669,6 +672,8 @@ function loop(){
                 }else{
                     drawImg(315,soulx,souly);
                 }
+            }else if(stage == 1){
+
             }
         }
         if(condition == 2){
@@ -2013,4 +2018,7 @@ function changescene(afterscene){
 }
 function changecondition(nextconditionnumber){
     condition = nextconditionnumber;
+}
+function changestage(nextstagenumber){
+    stage = nextstagenumber;
 }
