@@ -673,7 +673,13 @@ function loop(){
                     drawImg(315,soulx,souly);
                 }
             }else if(stage == 1){
-
+                fightsoul();
+                imove();
+                if(soulcolor == 0){
+                    drawImg(236,soulx,souly);
+                }else{
+                    drawImg(315,soulx,souly);
+                }
             }
         }
         if(condition == 2){
