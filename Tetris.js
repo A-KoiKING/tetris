@@ -549,9 +549,11 @@ function loop(){
                 setTimeout(drawImg,500+i*50,279+i,379,565);
             }
             setTimeout(textplay,500);
-            setTimeout(textpause,1300);
+            setTimeout(() => {
+                textpause();
+                cooltime0();
+            },1300);
             scooltime = 1;
-            setTimeout(cooltime0,1300);
         }
         if(condition == 11 && scooltime == 0){
             sentaku(1);
@@ -640,8 +642,8 @@ function loop(){
             soulx = 944;
             souly = 684;
             drawImg(236,soulx,souly);
+            condition = 21;
             if(stage == 0){
-                condition = 21;
                 for(let i = 1; i < 56; i++){
                     setTimeout(coursechange,300+100*i,i);
                 }
@@ -657,10 +659,15 @@ function loop(){
                 for(let i = 56; i < 77; i++){
                     setTimeout(coursechange,6700+100*i,i);
                 }
-                setTimeout(changecondition,15300,0);
-                setTimeout(changestage,15300,1);
+                setTimeout(() => {
+                    changecondition(0);
+                    changestage(1);
+                },15300);
             }else if(stage == 1){
-
+                setTimeout(() => {
+                    changecondition(0);
+                    changestage(1);
+                },5000);
             }
         }
         if(condition == 21){
