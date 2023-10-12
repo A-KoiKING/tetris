@@ -667,19 +667,9 @@ function loop(){
             if(stage == 0){
                 fightsoul();
                 imove();
-                if(soulcolor == 0){
-                    drawImg(236,soulx,souly);
-                }else{
-                    drawImg(315,soulx,souly);
-                }
             }else if(stage == 1){
                 fightsoul();
-                imove();
-                if(soulcolor == 0){
-                    drawImg(236,soulx,souly);
-                }else{
-                    drawImg(315,soulx,souly);
-                }
+                iattack();
             }
         }
         if(condition == 2){
@@ -1063,79 +1053,7 @@ function gameover_music(){
 function coursechange(n){
     course = n;
 }
-function drawblock(n){
-    blocki(n,395,565);
-    blocki(n+1,437,565);
-    blocki(n+2,478,565);
-    blocki(n+3,520,565);
-    blocki(n+4,561,565);
-    blocki(n+5,603,565);
-    blocki(n+6,644,565);
-    blocki(n+7,686,565);
-    blocki(n+8,727,565);
-    blocki(n+9,769,565);
-    blocki(n+10,810,565);
-    blocki(n+11,852,565);
-    blocki(n+12,893,565);
-    blocki(n+13,935,565);
-    blocki(n+14,976,565);
-    blocki(n+15,1018,565);
-    blocki(n+16,1059,565);
-    blocki(n+17,1101,565);
-    blocki(n+18,1142,565);
-    blocki(n+19,1184,565);
-    blocki(n+20,1225,565);
-    blocki(n+21,1267,565);
-    blocki(n+22,1308,565);
-    blocki(n+23,1350,565);
-    blocki(n+24,1391,565);
-    blocki(n+25,1433,565);
-    blocki(n+26,1474,565);
-}
-function blocki(n,x,y){
-    if(n == 0 || n == 32){
-        drawImg(314,x,y+70);
-        if(x-32 < soulx && x+50 > soulx && y+270 > souly && y+40 < souly){
-            damaged();
-        }
-    }
-    if(n == 4 || n == 28 || n == 36){
-        drawImg(318,x,y);
-        if(x-32 < soulx && x+50 > soulx && y+50 > souly && y-32 < souly){
-            damaged();
-        }
-        drawImg(316,x,y+120);
-        if(x-32 < soulx && x+50 > soulx && y+270 > souly && y+88 < souly){
-            damaged();
-        }
-    }
-    if(n == 8 || n == 24 || n == 40 || n == 56){
-        drawImg(317,x,y);
-        if(x-32 < soulx && x+50 > soulx && y+100 > souly && y-32 < souly){
-            damaged();
-        }
-        drawImg(317,x,y+170);
-        if(x-32 < soulx && x+50 > soulx && y+270 > souly && y+138 < souly){
-            damaged();
-        }
-    }
-    if(n == 12 || n == 20 || n == 44 || n == 52){
-        drawImg(316,x,y);
-        if(x-32 < soulx && x+50 > soulx && y+150 > souly && y-32 < souly){
-            damaged();
-        }
-        drawImg(318,x,y+220);
-        if(x-32 < soulx && x+50 > soulx && y+270 > souly && y+188 < souly){
-            damaged();
-        }
-    }
-    if(n == 16 || n == 48){
-        drawImg(314,x,y);
-        if(x-32 < soulx && x+50 > soulx && y+200 > souly && y-32 < souly){
-            damaged();
-        }
-    }
-}
+//imove
 function imove(){
     if(course == 1){
         blocki(4,1474,565);
@@ -1401,6 +1319,84 @@ function imove(){
     }else if(course == 75){
         blocki(20,395,565);
     }
+}
+function drawblock(n){
+    blocki(n,395,565);
+    blocki(n+1,437,565);
+    blocki(n+2,478,565);
+    blocki(n+3,520,565);
+    blocki(n+4,561,565);
+    blocki(n+5,603,565);
+    blocki(n+6,644,565);
+    blocki(n+7,686,565);
+    blocki(n+8,727,565);
+    blocki(n+9,769,565);
+    blocki(n+10,810,565);
+    blocki(n+11,852,565);
+    blocki(n+12,893,565);
+    blocki(n+13,935,565);
+    blocki(n+14,976,565);
+    blocki(n+15,1018,565);
+    blocki(n+16,1059,565);
+    blocki(n+17,1101,565);
+    blocki(n+18,1142,565);
+    blocki(n+19,1184,565);
+    blocki(n+20,1225,565);
+    blocki(n+21,1267,565);
+    blocki(n+22,1308,565);
+    blocki(n+23,1350,565);
+    blocki(n+24,1391,565);
+    blocki(n+25,1433,565);
+    blocki(n+26,1474,565);
+}
+function blocki(n,x,y){
+    if(n == 0 || n == 32){
+        drawImg(314,x,y+70);
+        if(x-32 < soulx && x+50 > soulx && y+270 > souly && y+40 < souly){
+            damaged();
+        }
+    }
+    if(n == 4 || n == 28 || n == 36){
+        drawImg(318,x,y);
+        if(x-32 < soulx && x+50 > soulx && y+50 > souly && y-32 < souly){
+            damaged();
+        }
+        drawImg(316,x,y+120);
+        if(x-32 < soulx && x+50 > soulx && y+270 > souly && y+88 < souly){
+            damaged();
+        }
+    }
+    if(n == 8 || n == 24 || n == 40 || n == 56){
+        drawImg(317,x,y);
+        if(x-32 < soulx && x+50 > soulx && y+100 > souly && y-32 < souly){
+            damaged();
+        }
+        drawImg(317,x,y+170);
+        if(x-32 < soulx && x+50 > soulx && y+270 > souly && y+138 < souly){
+            damaged();
+        }
+    }
+    if(n == 12 || n == 20 || n == 44 || n == 52){
+        drawImg(316,x,y);
+        if(x-32 < soulx && x+50 > soulx && y+150 > souly && y-32 < souly){
+            damaged();
+        }
+        drawImg(318,x,y+220);
+        if(x-32 < soulx && x+50 > soulx && y+270 > souly && y+188 < souly){
+            damaged();
+        }
+    }
+    if(n == 16 || n == 48){
+        drawImg(314,x,y);
+        if(x-32 < soulx && x+50 > soulx && y+200 > souly && y-32 < souly){
+            damaged();
+        }
+    }
+}
+//ここまでimove
+//iattack
+function iattack(){
+    drawImg(314,300,20);
 }
 function soulback(nextnumber){
     if(key[88] > 0 && scooltime == 0){
