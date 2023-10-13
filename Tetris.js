@@ -394,7 +394,6 @@ function loop(){
             cursor();
             writecursor();
             enter();
-
         }
         if(scene == 1){
             writeblack();
