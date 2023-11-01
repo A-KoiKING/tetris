@@ -660,7 +660,7 @@ function loop(){
                 }
                 setTimeout(() => {
                     changecondition(0);
-                    changestage(1);
+                    //changestage(1);
                 },15300);
             }else if(stage == 1){
                 setTimeout(() => {
