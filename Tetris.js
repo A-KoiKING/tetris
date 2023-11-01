@@ -1416,31 +1416,34 @@ function soulback(nextnumber){
     }
 }
 function drawdamage(n){
-    let nn;
+    let nn,n1,n2,next_mn_hp;
     if(n == 16){
         nn = 308;
-        mn_hp = mn_hp - 16;
+        next_mn_hp = mn_hp - 16;
     }
     if(n == 20){
         nn = 309;
-        mn_hp = mn_hp - 20;
+        next_mn_hp = mn_hp - 20;
     }
     if(n == 24){
         nn = 310;
-        mn_hp = mn_hp - 24;
+        next_mn_hp = mn_hp - 24;
     }
     if(n == 30){
         nn = 311;
-        mn_hp = mn_hp - 30;
+        next_mn_hp = mn_hp - 30;
     }
     drawImg(306,700,50);
     drawImg(298,958,200);
+
+    n1 = (1/3)*n;
+    n2 = (2/3)*n;
 
     setTimeout(() => {
         drawImg(306,700,50);
         drawImg(299,958,200);
         drawImg(312,834,465);
-        hpdraw_gage((1/3)*n);
+        hpdraw_gage(0);
         drawImg(nn,897,400);
     },100);
 
@@ -1448,7 +1451,7 @@ function drawdamage(n){
         drawImg(306,700,50);
         drawImg(300,958,200);
         drawImg(312,834,465);
-        hpdraw_gage((1/3)*n);
+        hpdraw_gage(0);
         drawImg(nn,897,380);
     },200);
 
@@ -1456,7 +1459,7 @@ function drawdamage(n){
         drawImg(306,700,50);
         drawImg(301,958,200);
         drawImg(312,834,465);
-        hpdraw_gage((1/3)*n);
+        hpdraw_gage(n1);
         drawImg(nn,897,360);
     },300);
 
@@ -1464,7 +1467,7 @@ function drawdamage(n){
         drawImg(306,700,50);
         drawImg(302,958,200);
         drawImg(312,834,465);
-        hpdraw_gage((2/3)*n);
+        hpdraw_gage(n1);
         drawImg(nn,897,350);
     },400);
 
@@ -1472,7 +1475,7 @@ function drawdamage(n){
         drawImg(306,700,50);
         drawImg(303,958,200);
         drawImg(312,834,465);
-        hpdraw_gage((2/3)*n);
+        hpdraw_gage(n1);
         drawImg(nn,897,360);
     },500);
 
@@ -1480,7 +1483,7 @@ function drawdamage(n){
         drawImg(307,400,50);
         drawImg(306,750,50);
         drawImg(312,834,465);
-        hpdraw_gage((2/3)*n);
+        hpdraw_gage(n1);
         drawImg(nn,897,380);
     },600);
 
@@ -1488,7 +1491,7 @@ function drawdamage(n){
         drawImg(307,400,50);
         drawImg(306,650,50);
         drawImg(312,834,465);
-        hpdraw_gage(n);
+        hpdraw_gage(n2);
         drawImg(nn,897,400);
     },700);
 
@@ -1496,7 +1499,7 @@ function drawdamage(n){
         drawImg(307,400,50);
         drawImg(306,742,50);
         drawImg(312,834,465);
-        hpdraw_gage(n);
+        hpdraw_gage(n2);
         drawImg(nn,897,410);
     },800);
 
@@ -1504,7 +1507,7 @@ function drawdamage(n){
         drawImg(307,400,50);
         drawImg(306,658,50);
         drawImg(312,834,465);
-        hpdraw_gage(n);
+        hpdraw_gage(n2);
         drawImg(nn,897,400);
     },900);
 
@@ -1512,7 +1515,7 @@ function drawdamage(n){
         drawImg(307,400,50);
         drawImg(306,734,50);
         drawImg(312,834,465);
-        hpdraw_gage(n);
+        hpdraw_gage(n2);
         drawImg(nn,897,400);
     },1000);
 
@@ -1578,6 +1581,7 @@ function drawdamage(n){
         drawImg(312,834,465);
         hpdraw_gage(n);
         drawImg(nn,897,400);
+        mn_hp = next_mn_hp;
     },1800);
 }
 function sentaku(i){
