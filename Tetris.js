@@ -1227,18 +1227,21 @@ function imove(){
     }else if(course == 55){
         drawblock(0);
     }else if(course == 77){
+        blocki(0,395,565);
         blocki(4,561,565);
         blocki(8,727,565);
         blocki(12,893,565);
         blocki(16,1059,565);
         blocki(20,1225,565);
     }else if(course == 78){
+        blocki(0,437,565);
         blocki(4,603,565);
         blocki(8,769,565);
         blocki(12,935,565);
         blocki(16,1101,565);
         blocki(20,1267,565);
     }else if(course == 79){
+        blocki(0,479,565);
         blocki(4,644,565);
         blocki(8,810,565);
         blocki(12,976,565);
