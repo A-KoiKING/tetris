@@ -1405,7 +1405,7 @@ function iattack(){
     drawImg(314,300,20);
 }
 function soulback(nextnumber){
-    if(key[88] > 0 && scooltime == 0){
+    if((key[88] > 0 || key[81] > 0) && scooltime == 0){
         condition = nextnumber;
         scooltime = 1;
         if(nextnumber == 0){
