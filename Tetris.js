@@ -918,7 +918,7 @@ function gameoverpause(){
 }
 function soulfightmove(){
     //右
-    if(key[39] > 0){
+    if(key[39] > 0 || key[68] > 0){
         if(key[16] > 0 && canfightmover(10)){
             soulx = soulx + 10;
         }else if(canfightmover(20)){
@@ -926,7 +926,7 @@ function soulfightmove(){
         }
     }
     //左
-    if(key[37] > 0){
+    if(key[37] > 0 || key[65] > 0){
         if(key[16] > 0 && canfightmovel(-10)){
             soulx = soulx - 10;
         }else if(canfightmovel(-20)){
@@ -934,7 +934,7 @@ function soulfightmove(){
         }
     }
     //上
-    if(key[38] > 0){
+    if(key[38] > 0 || key[87] > 0){
         if(key[16] > 0 && canfightmoveu(-10)){
             souly = souly - 10;
         }else if(canfightmoveu(-20)){
@@ -942,7 +942,7 @@ function soulfightmove(){
         }
     }
     //下
-    if(key[40] > 0){
+    if(key[40] > 0 || key[83] > 0){
         if(key[16] > 0 && canfightmoved(10)){
             souly = souly + 10;
         }else if(canfightmoved(20)){
@@ -1606,14 +1606,14 @@ function item(){
 }
 function soulkoudou(){
     if(soulkoudouposition == 0 && scooltime == 0){
-        if(key[39] > 0){
+        if(key[39] > 0 || key[68] > 0){
             soulkoudouposition = 1;
             scooltime = 1;
             setTimeout(cooltime0,200);
             move_sound.play();
         }
     }else if(soulkoudouposition == 1 && scooltime == 0){
-        if(key[37] > 0){
+        if(key[37] > 0 || key[65] > 0){
             soulkoudouposition = 0;
             scooltime = 1;
             setTimeout(cooltime0,200);
@@ -1653,7 +1653,7 @@ function soulmove(){
         movesoul(237,240,243,247);
     }
     //右
-    if(key[39] > 0 && scooltime == 0){
+    if((key[39] > 0 || key[68] > 0) && scooltime == 0){
         if (soulposition != 3 && ctmove == 0){
             soulposition ++;
             ctmove = 1;
@@ -1662,7 +1662,7 @@ function soulmove(){
         }
     }
     //左
-    if(key[37] > 0 && scooltime  == 0){
+    if((key[37] > 0 || key[65] > 0) && scooltime  == 0){
         if (soulposition != 0 && ctmove == 0){
             soulposition --;
             ctmove = 1;
@@ -1763,7 +1763,7 @@ function Mcooltime(){
 }
 function move(){
     //右
-    if(key[39] > 0){
+    if(key[39] > 0 || key[68] > 0){
         if (canmove(1,0) && ctmove == 0){
             offsetx ++;
             ctmove = 1;
@@ -1771,7 +1771,7 @@ function move(){
         }
     }
     //左
-    if(key[37] > 0){
+    if(key[37] > 0 || key[65] > 0){
         if (canmove(-1,0) && ctmove == 0){
             offsetx --;
             ctmove = 1;
@@ -1780,14 +1780,14 @@ function move(){
     }
     //上
     /*
-    if(key[38] > 0){
+    if(key[38] > 0 || key[87] > 0){
         if (canmove(0,-1)){
             offsety --;
         }
     }
     */
     //下
-    if(key[40] > 0){
+    if(key[40] > 0 || key[83] > 0){
         if (canmove(0,1)){
             offsety ++;
         }
@@ -1990,14 +1990,14 @@ function gameovercheck(){
 }
 function cursor(){
     //上
-    if(key[38] > 0){
+    if(key[38] > 0 || key[87] > 0){
         if(Coffset > 0){
             move_sound.play();
             Coffset --;
         }
     }
     //下
-    if(key[40] > 0){
+    if(key[40] > 0 || key[83] > 0){
         if (Coffset < 1){
             move_sound.play();
             Coffset ++;
