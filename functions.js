@@ -63,3 +63,42 @@ function gameoverplay(){
 function gameoverpause(){
     gameover_message.pause();
 }
+function gameover_music(){
+    gameover_sound.play();
+    gameover_sound.loop = true;
+}
+
+//main
+function writeblack(){
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0,0,cvs.width,cvs.height);
+}
+function writeword(size,word,x,y){
+    ctx.font = parseInt(size) + "px bold monospace";
+    ctx.fillText(word,x,y);
+}
+function cooltime0(){
+    scooltime = 0;
+}
+function conditioncheck(){
+    condition++;
+    scooltime = 1;
+}
+function changegame(nextgame){
+    //それぞれの画面切り替え
+    game = nextgame;
+    condition = 0;
+}
+function changescene(afterscene){
+    //テトリス時の場面切り替え
+    scene = afterscene;
+}
+function changecondition(nextconditionnumber){
+    //メッセージパートとミーゴ戦の場面切り替え
+    //scooltimeを使用しない
+    condition = nextconditionnumber;
+}
+function changestage(nextstagenumber){
+    //ミーゴの攻撃パターン
+    stage = nextstagenumber;
+}
