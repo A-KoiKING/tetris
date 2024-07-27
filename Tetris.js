@@ -378,10 +378,8 @@ function loop(){
     //========= ここからフレーム内の処理を追加 =========
     if(game == 0){
         if(key[69] > 0 && key[82] > 0 && key[84] > 0 && key[89] > 0 && Coffset == 1){
-            game = 2;
-            condition = 0;
-            mn_bgm.play();
-            mn_bgm.loop = true;
+            game = 1;
+            condition = 12;
         }
         if(scene == 0){
             writeblack();
@@ -427,6 +425,9 @@ function loop(){
             if(clearline > 9){
                 game = 1;
             }
+            if(key[80] > 0){
+                clearline = 10;
+            }
         }
         if(gameoverword == 1){
             ctx.fillStyle = "white";
@@ -438,9 +439,9 @@ function loop(){
         }
     }else if(game == 1){
         tetris_bgm.pause();
-        /*if(key[66] > 0 && scooltime == 0 && skipkey == 0){
+        if(key[66] > 0 && scooltime == 0 && skipkey == 0){
             condition = 12;
-        }*/
+        }
         if(condition == 0){
             condition = 1;
             setTimeout(black,200,1);
@@ -529,10 +530,8 @@ function loop(){
                 mn_bgm.play();
                 mn_bgm.loop = true;
             }
-            if(condition == 15){
-                soulx = soulx + soulxv;
-                souly = souly + soulyv;
-            }
+            soulx = soulx + soulxv;
+            souly = souly + soulyv;
         }
     }else if(game == 2){
         if(condition == 0){
