@@ -302,13 +302,11 @@ function loop(){
         }
     }else if(game == 2){
         if(condition == 0){
-            course = 0;
+            //最初に入ったときの初期設定
+            course = -27;
             condition = 11;
-            writeblack();
-            drawImg(0,700,50);
-            drawImg(250,364,850);
-            writeframeup();
-            hpdraw(hp);
+            menusoul();
+            movesoul(237,240,243,248);
             soulmove();
             for(let i = 0; i < 16; i++){
                 setTimeout(drawImg,500+i*50,279+i,379,565);
@@ -321,6 +319,7 @@ function loop(){
             scooltime = 1;
         }
         if(condition == 11 && scooltime == 0){
+            //menu
             sentaku(1);
             sentaku(2);
             item();
@@ -332,11 +331,7 @@ function loop(){
             barx = 0;
             condition = 12;
             scooltime = 1;
-            writeblack();
-            drawImg(0,700,50);
-            drawImg(250,364,850);
-            writeframeup();
-            hpdraw(hp);
+            menusoul();
             movesoul(239,240,243,246);
             drawImg(295,379,565);
             for(let i = 0; i <= mn_hp/2; i++){
@@ -355,21 +350,13 @@ function loop(){
         if(condition == 13 && (key[32] > 0 || key[90] > 0 || key[13] > 0)){
             enter_sound2.play();
             condition = 14;
-            writeblack();
-            drawImg(0,700,50);
-            drawImg(250,364,850);
-            writeframeup();
-            hpdraw(hp);
+            menusoul();
             movesoul(237,240,243,246);
             drawImg(296,379,565);
             setTimeout(cooltime0,200);
         }
         if(condition == 14 && scooltime == 0){
-            writeblack();
-            drawImg(0,700,50);
-            drawImg(250,364,850);
-            writeframeup();
-            hpdraw(hp);
+            menusoul();
             movesoul(237,240,243,246);
             drawImg(296,379,565);
             drawImg(297,barx+379,565);
@@ -409,25 +396,13 @@ function loop(){
             drawImg(236,soulx,souly);
             condition = 21;
             if(stage == 0){
-                for(let i = 1; i < 56; i++){
-                    setTimeout(coursechange,300+100*i,i);
-                }
-                for(let j = 24; j < 56; j++){
-                    setTimeout(coursechange,3500+100*j,j);
-                }
-                for(let i = 24; i < 53; i++){
-                    setTimeout(coursechange,6700+100*i,i);
-                }
-                setTimeout(coursechange,12000,79);
-                setTimeout(coursechange,12100,78);
-                setTimeout(coursechange,12200,77);
-                for(let i = 56; i < 77; i++){
-                    setTimeout(coursechange,6700+100*i,i);
+                for(let i = -26; i <= 57; i++){
+                    setTimeout(coursechange,2900+100*i,i);
                 }
                 setTimeout(() => {
                     changecondition(0);
                     //changestage(1);
-                },15300);
+                },9700);
             }else if(stage == 1){
                 setTimeout(() => {
                     changecondition(0);
@@ -438,7 +413,7 @@ function loop(){
         if(condition == 21){
             if(stage == 0){
                 fightsoul();
-                imove();
+                drawblock(course);
             }else if(stage == 1){
                 fightsoul();
                 iattack();
@@ -448,11 +423,7 @@ function loop(){
             soulkoudouposition = 0;
             condition = 9;
             scooltime = 1;
-            writeblack();
-            drawImg(0,700,50);
-            drawImg(250,364,850);
-            writeframeup();
-            hpdraw(hp);
+            menusoul();
             movesoul(237,242,243,246);
             drawImg(253,379,565);
             setTimeout(cooltime0,300);
@@ -463,11 +434,7 @@ function loop(){
                 enter_sound1.play();
                 condition = 10;
                 scooltime = 1;
-                writeblack();
-                drawImg(0,700,50);
-                drawImg(250,364,850);
-                writeframeup();
-                hpdraw(hp);
+                menusoul();
                 movesoul(237,242,243,246);
                 drawImg(254,379,565);
                 setTimeout(cooltime0,300);
@@ -481,11 +448,7 @@ function loop(){
                 if(scooltime == 0){
                     if(key[32] > 0 || key[90] > 0 || key[13] > 0){
                         enter_sound2.play();
-                        writeblack();
-                        drawImg(0,700,50);
-                        drawImg(250,364,850);
-                        writeframeup();
-                        hpdraw(hp);
+                        menusoul();
                         movesoul(237,242,243,246);
                         drawImg(252,379,565);
                         condition = 6;
@@ -502,11 +465,7 @@ function loop(){
                 drawImg(255,379,565);
                 if(scooltime == 0 && (key[32] > 0 || key[90] > 0 || key[13] > 0)){
                     enter_sound2.play();
-                    writeblack();
-                    drawImg(0,700,50);
-                    drawImg(250,364,850);
-                    writeframeup();
-                    hpdraw(hp);
+                    menusoul();
                     movesoul(237,242,243,246);
                     drawImg(252,379,565);
                     condition = 6;
@@ -523,11 +482,7 @@ function loop(){
         if(condition == 3){
             condition = 7;
             scooltime = 1;
-            writeblack();
-            drawImg(0,700,50);
-            drawImg(250,364,850);
-            writeframeup();
-            hpdraw(hp);
+            menusoul();
             movesoul(237,240,245,246);
             drawImg(256,379,565);
             setTimeout(cooltime0,300);
@@ -539,11 +494,7 @@ function loop(){
                     eat_sound.play();
                     batasuko = 0;
                     hp = 20;
-                    writeblack();
-                    drawImg(0,700,50);
-                    drawImg(250,364,850);
-                    writeframeup();
-                    hpdraw(hp);
+                    menusoul();
                     movesoul(237,240,244,246);
                     drawImg(252,379,565);
                     condition = 6;
@@ -558,11 +509,7 @@ function loop(){
         if(condition == 4){
             condition = 5;
             scooltime = 1;
-            writeblack();
-            drawImg(0,700,50);
-            drawImg(250,364,850);
-            writeframeup();
-            hpdraw(hp);
+            menusoul();
             movesoul(237,240,243,248);
             drawImg(257,379,565);
             setTimeout(cooltime0,300);
@@ -571,11 +518,7 @@ function loop(){
             soulback(0);
             if(key[32] > 0 || key[90] > 0 || key[13] > 0){
                 enter_sound1.play();
-                writeblack();
-                drawImg(0,700,50);
-                drawImg(250,364,850);
-                writeframeup();
-                hpdraw(hp);
+                menusoul();
                 movesoul(237,240,243,247);
                 drawImg(252,379,565);
                 condition = 6;

@@ -19,3 +19,19 @@ function drawsquare(x,y){
     ctx.fillStyle = "#000000";    
     ctx.strokeRect(x+5, y+5, 20, 20);
 }
+
+//ウィンドウサイズ変更処理
+function resizeCanvas() {
+    // ウィンドウの幅と高さを取得
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
+    // canvasの幅と高さを設定
+    cvs.width = width;
+    cvs.height = height;
+}
+
+window.addEventListener('resize', resizeCanvas, false);
+
+
+resizeCanvas();
