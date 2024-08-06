@@ -6,11 +6,12 @@
 FPS = 20;
 let stime,etime,ptime;
 
-//変数
-let tetsize = 35;
-
+//メイン変数
 let game = 0;
+let scene = 0;
 
+//テトリス変数
+let tetsize = 35;
 let direction = 0;
 
 let offsetx = 0;
@@ -20,11 +21,6 @@ let ctroll = 0;
 let ctmove = 0;
 
 let clearline = 0;
-
-let scene = 0;
-
-let Coffset = 0;
-
 let gameoverword = 0;
 
 let rndnumber = 0;
@@ -32,9 +28,12 @@ let rndn = [];
 rndn[rndnumber] = 0;
 let movingmino = rndmino();
 
+//メニュー変数
+let Coffset = 0;
+
+//アンダーテール変数
 let scooltime = 1;
 let condition = 0;
-let check = 0;
 
 let skipkey = 0;
 
